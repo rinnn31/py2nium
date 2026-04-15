@@ -32,6 +32,7 @@ import io.py2nium.server.handler.clipboard.ClearClipboardCommand;
 import io.py2nium.server.handler.clipboard.GetClipboardCommand;
 import io.py2nium.server.handler.clipboard.SetClipboardCommand;
 import io.py2nium.server.handler.device.DumpSourceCommand;
+import io.py2nium.server.handler.device.WaitEventCommand;
 import io.py2nium.server.handler.device.ExecuteShellCommand;
 import io.py2nium.server.handler.device.GetDeviceInfoCommand;
 import io.py2nium.server.handler.device.MakeToastCommand;
@@ -41,6 +42,7 @@ import io.py2nium.server.handler.device.SendKeyCommand;
 import io.py2nium.server.handler.device.SendKeysCommand;
 import io.py2nium.server.handler.device.SetRotationCommand;
 import io.py2nium.server.handler.capture.TakeScreenshotCommand;
+import io.py2nium.server.handler.device.QueryEventCommand;
 import io.py2nium.server.handler.elements.ClickCommand;
 import io.py2nium.server.handler.elements.DeleteCommand;
 import io.py2nium.server.handler.elements.DoubleClickCommand;
@@ -58,6 +60,7 @@ import io.py2nium.server.handler.elements.RefreshCommand;
 import io.py2nium.server.handler.elements.SetTextCommand;
 import io.py2nium.server.handler.elements.SwipeCommand;
 import io.py2nium.server.http.HttpServerImpl;
+import io.py2nium.server.utils.AxEventHelper;
 
 public class Py2niumAutomatorStub {
     private final HttpServerImpl mHttpServer;
@@ -89,6 +92,8 @@ public class Py2niumAutomatorStub {
         mHttpServer.addHandler(new NetworkCommand("/device/network", HttpMethod.POST));
         mHttpServer.addHandler(new PerformGlobalActionCommand("/device/global_action", HttpMethod.GET));
         mHttpServer.addHandler(new MakeToastCommand("/device/toast", HttpMethod.POST));
+        mHttpServer.addHandler(new QueryEventCommand("/device/event/query", HttpMethod.POST));
+        mHttpServer.addHandler(new WaitEventCommand("/device/event/wait", HttpMethod.POST));
         mHttpServer.addHandler(new GetDeviceInfoCommand("/device/info", HttpMethod.GET));
 
         mHttpServer.addHandler(new FindElementCommand("/elements/find_element", HttpMethod.POST));
