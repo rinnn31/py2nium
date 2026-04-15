@@ -71,6 +71,7 @@ public class Py2niumAutomatorStub {
 
     public Py2niumAutomatorStub(String host, int port) {
         mHttpServer = new HttpServerImpl(host, port);
+        AxEventHelper.getInstance(); // Initialize AxEventHelper and start listening for event
         initHandler();
     }
 
