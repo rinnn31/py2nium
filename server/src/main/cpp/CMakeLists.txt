@@ -9,6 +9,12 @@ set_target_properties(opencv PROPERTIES
         ${CMAKE_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libopencv_java4.so
 )
 
+add_library(${CMAKE_PROJECT_NAME} SHARED
+        bridge.cpp
+        image_matcher.cpp
+        image_preprocessing.cpp
+        )
+
 target_include_directories(${CMAKE_PROJECT_NAME}
         PRIVATE
         ${CMAKE_SOURCE_DIR}/includes

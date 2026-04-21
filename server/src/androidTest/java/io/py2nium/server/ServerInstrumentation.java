@@ -29,7 +29,7 @@ import org.junit.Test;
 
 public class ServerInstrumentation {
     static {
-        System.loadLibrary("py2nium-extensions");
+        System.loadLibrary("py2nium-jni");
     }
 
     Py2niumAutomatorStub stub;
