@@ -20,8 +20,32 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
     <application android:requestLegacyExternalStorage="true"
-                 android:icon="@mipmap/app_icon"
-                 android:roundIcon="@mipmap/app_icon_round">
+        android:icon="@mipmap/app_icon"
+        android:roundIcon="@mipmap/app_icon_round">
         <profileable android:shell="true"/>
+        <service android:name=".core.Py2niumService"
+            android:exported="false"/>
+        <service android:name="io.py2nium.server.gui.core.TestRunnerService"
+            android:exported="true"/>
+        <receiver android:name=".gui.utils.BootupListener"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name=".gui.Py2niumApp"
+            android:theme="@style/Theme.Py2nium"
+            android:label="Py2nium Server"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".gui.SettingsActivity"
+            android:theme="@style/Theme.Py2nium"
+            android:exported="false"/>
     </application>
 </manifest>

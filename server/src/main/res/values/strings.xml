@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Py2nium Server</string>
+
+    <!-- Server status section -->
+    <string name="server_running_status">Py2nium server is running</string>
+    <string name="server_stopped_status">Py2nium server is stopped</string>
+    <string name="stopped_instrument">Chooses one of the following methods to start server</string>
+    <string name="running_instrument">Taps to stop server</string>
+
+    <!-- Log section -->
+    <string name="log_title">View server logcat</string>
+    <string name="log_description">Taps to open server logcat</string>
+
+    <!-- ADB section -->
+    <string name="adb_method_title">Start server through ADB</string>
+    <string name="adb_method_description">
+        By connecting to adb daemon with wireless connection, you can execute command with shell privilege to start the server.
+        Note that in android 11 and later, you cannot connect directly to adbd through tcpip. You need to pair with the device first.
+    </string>
+    <string name="start_text">Start server</string>
+
+    <!-- Root section -->
+    <string name="root_method_title">Start server through root</string>
+    <string name="root_method_description">
+        If your device is rooted, you can start the server though su command. You can also change su binary path in setting.
+    </string>
+
+    <!-- Information section -->
+    <string name="information_title">Information</string>
+    <string name="information_description">All Py2nium server\'s information</string>
+
+
+    <!-- Log view -->
+    <string name="log_view_title">Log view</string>
+    <string name="delete_log_tooltip">Delete current log</string>
+    <string name="export_log_tooltip">Export current log to sdcard</string>
+    <string name="app_log_text">Service Log:</string>
+    <string name="server_log_text">Full detail Log:</string>
+
+    <!-- Setting view -->
+    <string name="setting_title">Settings</string>
+    <string name="su_path_text">Su binary path</string>
+    <string name="su_path_description">Specify valid su binary path on your device. If not specified, app will search binary with \'su\' name in all dir </string>
+    <string name="su_path_hint">/system/xbin/su</string>
+
+    <string name="server_port_text">Server port</string>
+    <string name="server_port_description">The port that server will listen on. It must be in range 1 to 65535</string>
+    <string name="server_port_hint">8080</string>
+
+    <string name="adb_default_port_text">ADB default port</string>
+    <string name="adb_default_port_description">The default port will be used when connecting to adbd through tcpip if not specified. It must be in range 1 to 65535</string>
+    <string name="adb_default_port_hint">5555</string>
+
+    <string name="start_on_boot_text">Start server on boot</string>
+    <string name="start_on_boot_description">Start server automatically when device boot up. It\'s only available when server is started through root or adbd socket</string>
+    <string name="start_on_boot_enable">Enable</string>
+
+    <!-- Adb Dialog -->
+    <string name="adb_dialog_title">Start with adb</string>
+    <string name="adb_port_text">Port</string>
+    <string name="adb_pairing_text">Pairing Code</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="connect_text">Start server</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">Py2nium Server Channel</string>
+    <string name="notification_text">"Py2nium server is currently running on "</string>
+    <string name="notification_title">Py2nium Automation Server</string>
+
+    <!-- Github info -->
+    <string name="github_repo_url">https://github.com/rinnn31/py2nium</string>
+    <string name="github_author">rinnn31</string>
+</resources>
